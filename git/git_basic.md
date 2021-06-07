@@ -22,8 +22,6 @@
   ls -a
   ```
 
-![ls](git_basic.assets/ls-1623078391043.PNG)
-
 현재 내가 동작하고 있는 폴더의 위치를 출력한다. 
 
 print working directory
@@ -107,7 +105,7 @@ commit 남기기 (**git commit**)
 
 **git push**
 
-깃허브에서 repository 생성 후 주소복사해 origin이라는 별명의 remote repo생성![repo](git_basic.assets/repo.PNG)
+깃허브에서 repository 생성 후 주소복사해 origin이라는 별명의 remote repo생성![repo](https://s3-ap-northeast-2.amazonaws.com/opentutorials-user-file/module/3963/10411.png)
 
 -v : 원격저장소의 별명과 실제주소 확인
 
