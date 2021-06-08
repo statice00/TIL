@@ -11,3 +11,4 @@ gir push origin master
 ```bash
 git mv ./python_basic/1_01_numeric.md ./python_basic/1_datatype/1_01_numeric.md
 ```
+
