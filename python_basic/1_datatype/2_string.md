@@ -12,8 +12,8 @@
 ![sequence](https://dojang.io/pluginfile.php/13491/mod_page/content/4/011002.png)
 
 ### 문자열(string)
-- **homogeneous, sequence, immutable**한 container이다.
-- 작은따옴표(')로 묶거나 큰따옴표(")로 묶는다
+**homogeneous, sequence, immutable**한 container이다.  
+작은따옴표(')로 묶거나 큰따옴표(")로 묶는다
 ```python
 a = 'python'
 b = "sql"
