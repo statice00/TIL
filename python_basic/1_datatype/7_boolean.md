@@ -6,3 +6,4 @@ int에서 상속받는다. (1 or 0)
 print(True + 1) # out : 2
 print(False + 0) # out : 1
 ```
+  
