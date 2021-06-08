@@ -1,9 +1,11 @@
+## Data Type
+![자료형](https://076923.github.io/assets/images/Python/ch3/2.png)
+
+---
 ## 숫자형(numeric)
 - 정수(integer)
 - 실수(flosting point)
 - 복소수(complex)
-
-![자료형](https://076923.github.io/assets/images/Python/ch3/2.png)
 
 ### 정수(integer)
 ```python
