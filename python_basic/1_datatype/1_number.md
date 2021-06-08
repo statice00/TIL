@@ -41,9 +41,9 @@ a = 5 + 1j
 ```
 - 진법
 파이썬 int는 10진법이 기본  
-0b : 2진법(binary) 0~1 사용  
-0o : 8진법(octal) 0~7 사용  
-0x : 16진법(hexadecimal) 0~9 a(10)~f(15) 사용  
+0b : 2진법(binary) 0 ~ 1 사용  
+0o : 8진법(octal) 0 ~ 7 사용  
+0x : 16진법(hexadecimal) 0~9 a(10) ~ f(15) 사용  
 ```python
 0b1111 # 15
 0o11 # 9
