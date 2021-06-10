@@ -6,7 +6,7 @@
 예외처리문은 try ~ except ~ else ~ finally로 구성된다.  
 try에서 실행되는 코드에 에러가 발생할 경우 except가 실행된다.  
 try에서 실행되는 코드가 정상적 처리가 되면 else가 실행된다.  
-finally는 무조건 마지막에 실행된다.
+finally는 무조건 마지막에 실행된다. 
 ```python
 try:
     a = int(3)
