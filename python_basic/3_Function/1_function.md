@@ -89,37 +89,11 @@ display(d,e,f) # out : 6
     #       {'x' : 2, 'y' : 3}
     ```
     가변 positional, 가변 keyword 방식은 매개변수를 지정할때 한번씩만 사용할 수 있다.
+    
 
-- 동기화(synchronization)  
-    1. global : 내부와 외부의 객체를 동기화시킨다. 
-    ```python
-    t = 3
-    def prn():
-        global t
-        t = t+1
-        print(t)
-    prn() # out : 4
-    ```
-    ```python
-    t # out : 4
-    ```
-
-    2. nonlocal : 함수 안에 있는 영역에 동기화한다
-    ```python
-    k=1
-    def outer():
-        m = 1
-        def inner():
-            global k
-            k = k+1
-            nonlocal m
-            m = m+1
-            return k, m
-        return inner()
-
-    outer() # out : (2, 2)
-    ```
+ --- 
 - signature  
 함수 이름에 마우스 커서를 놓고 shift + tab 하면 함수의 signature가 나온다  
 signature는 함수의 사용방법을 알려준다  
 ex) sum(iterable,/,start=0))
+
