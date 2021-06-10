@@ -1,5 +1,5 @@
 ### while 반복문
-![while](https://media.geeksforgeeks.org/wp-content/uploads/20191101170515/while-loop.jpg)
+![while](https://media.geeksforgeeks.org/wp-content/uploads/20191101170515/while-loop.jpg) 
 a += 1 : a = a + 1  
 a -+ 1 : a = a - 1  
 while문이 완벽히 돌았으므로 end 출력
