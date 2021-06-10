@@ -1,6 +1,6 @@
 ![if_else](https://cdn.educba.com/academy/wp-content/uploads/2019/09/If-Else-in-Python.jpg)
 
-### if_else 조건문 
+### if_else 조건문  
 다른 언어에서는 여러 문장을 실행할때 {}블록을 만드는데, python에서는 들여쓰기를 맞춰주면 블록 실행됨  
 tab 대신에 스페이스바(space bar) 4번 권장 
 - True일때만 수행  
