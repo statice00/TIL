@@ -1,5 +1,5 @@
 ### for문
-![for](https://media.geeksforgeeks.org/wp-content/uploads/20191101172216/for-loop-python.jpg)
+![for](https://media.geeksforgeeks.org/wp-content/uploads/20191101172216/for-loop-python.jpg) 
 
  - in 다음에 iterable이 온다. (for 변수 in iterable)
  - iterable은 하나 이상의 데이터를 가지고 있는 container이다.
