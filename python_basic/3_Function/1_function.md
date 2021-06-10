@@ -15,16 +15,16 @@ def prn():
 
 prn()  # out : 1
 ```
-- 매개변수(parameter), 인자(argument)  
-매개변수(parameter) : 함수를 정의할때 쓰는 변수  
-인자(argument) : 함수를 사용할때 쓰는 변수
+- 매개변수(parameter), 인수(argument)  
+매개변수,인자(parameter) : 함수를 정의할때 쓰는 변수  
+인수(argument) : 함수를 사용할때 쓰는 변수
 ```python
 def display(a,b,c):
     return a+b+c
 d,e,f = 1,2,3
 display(d,e,f) # out : 6
 ```
-- 매개변수와 인자의 7가지 사용방식
+- 매개변수와 인수의 7가지 사용방식
     1. positional  
     선언할때 매개변수의 순서와 호출할때 인자의 입력 순서를 그대로 매칭
     ```python
@@ -46,8 +46,8 @@ display(d,e,f) # out : 6
     proc(2, c=5, b=3) # out : (2, 3, 5)   
     ```
     4. positional only
-    함수를 사용할때 positional방삭으로만 인자를 사용할 수 있도록 강제하는 방법  
-    '/'의 앞에 오는 인자들은 positional방식으로만 입력가능. keyword방식 불가  
+    함수를 사용할때 positional방삭으로만 인수를 사용할 수 있도록 강제하는 방법  
+    '/'의 앞에 오는 인수들은 positional방식으로만 입력가능. keyword방식 불가  
     ```python
     def proc(a,b,c,/):
         return a,b,c
@@ -55,8 +55,8 @@ display(d,e,f) # out : 6
     proc(4,5,6) # out : (4,5,6)
     ```
     5. keyword only  
-    keyword방식으로만 인자를 사용할 수 있도록 강제하는 방법
-    '*'의 뒤에 오는 인자들은 keyword방식으로만 입력가능.
+    keyword방식으로만 인수를 사용할 수 있도록 강제하는 방법
+    '*'의 뒤에 오는 인수들은 keyword방식으로만 입력가능.
     ```python
     def proc(*,a,b,c):
         return a,b,c
@@ -65,7 +65,7 @@ display(d,e,f) # out : 6
     ```
     6. 가변 positional  
     매개변수(parameter) 이름에 '*'을 붙인다.    
-    positional방식으로 입력되는 인자의 개수에 상관없이 모두 받아온다.
+    positional방식으로 입력되는 인수의 개수에 상관없이 모두 받아온다.
     ```python
     def proc(*a):
         hap = 0
@@ -77,8 +77,8 @@ display(d,e,f) # out : 6
     ```
     7. 가변 keyword  
     매개변수(parameter) 이름에 '**'을 붙인다.  
-    keyword방식으로 입력되는 인자의 개수에 상관없이 모두 받아온다.  
-    인자로 넘겨준 이름을 dictionary의 key로 사용한다.
+    keyword방식으로 입력되는 인수의 개수에 상관없이 모두 받아온다.  
+    인수로 넘겨준 이름을 dictionary의 key로 사용한다.
     ```python
     def proc (**a):
         print(type(a))
