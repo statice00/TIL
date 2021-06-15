@@ -120,6 +120,26 @@ SELECT buyprice, row_number() over(ORDER BY buyprice) AS rownumber,  /* 동정�
                  dense_rank() over(ORDER BY buyprice) AS denserank   /* 동점인 경우 같은 등수로 계산, 동점의 등수 바로 다음 수로 순위 매김 */
 FROM classicmodels.products;
 
+/* SUBQUERY */
+SELECT ordernumber
+FROM classicmodels.orders
+WHERE customernumber in (SELECT customernumber 
+    FROM classicmodels.customers 
+    WHERE city = 'NYC');
+    
+SELECT customernumber
+FROM (SELECT customernumber
+    FROM classicmodels.customers
+    WHERE city = 'NYC') A; /* A라는 테이블명칭으로 쿼리 내부에서 사용 */
+    
+SELECT ordernumber
+FROM classicmodels.orders
+WHERE customernumber in (SELECT customernumber
+    FROM classicmodels.customers
+    WHERE country = 'USA');
+    
+
+
 /* default : 오름차순 ASC
    내림차순 : DESC       
 */
