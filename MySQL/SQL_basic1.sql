@@ -121,6 +121,11 @@ SELECT buyprice, row_number() over(ORDER BY buyprice) AS rownumber,  /* 동정�
 FROM classicmodels.products;
 
 /* SUBQUERY */
+/*
+1. subquery는 ( )내에서 작성한다.
+2. in: subquery의 결과가 여러개 일 때
+   =, >=, <= : subquery의 결과가 1개 이하일때
+*/
 SELECT ordernumber
 FROM classicmodels.orders
 WHERE customernumber in (SELECT customernumber 
