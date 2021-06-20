@@ -45,6 +45,20 @@ random.randrange(a,b,c)  # a이상 b미만 중 c단위만큼 차이나는 임의
 random.choice(sequence)  # 공백이 아닌 sequence에서 임의의 항목 반환
 random.sample(population, n) # sequence로 이루어진 population에서 중복되지 않는 n개의 인자 반환 
 ```
-
-
-
+날짜, 시간 처리 모듈
+```python
+import datetime
+date = datetime.date(year, month, day)
+time = datetime.time(hour, minute, second)
+datetime = datetime.datetime(year,month,day,hour,minute,second)
+```
+달력 생성 처리 모듈
+```python
+import calendar
+calendar.calendar(year, col=3)
+calendar.month(year, month)
+calendar.monthrange(year, month)
+calendar.firstweekday()  # 첫번째 요일값 반환 default = 월요일(0)
+calendar.firstweekday()  # 첫번째 요일값 지정 월요일(0)~일요일(6)
+calendar.weekday(year, month, day) # 지정 년월일의 요일 반환
+```
