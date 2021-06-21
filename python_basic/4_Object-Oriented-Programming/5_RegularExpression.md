@@ -1,4 +1,4 @@
-### 정규 표현식(Regular Expression)
+## 정규 표현식(Regular Expression)
 ![regular expression](https://miro.medium.com/max/2964/1*hjsbL45MhT2Tw5DGAYoAUg.png)
 
 ---
@@ -19,8 +19,8 @@
    - \W - 문자+숫자(alphanumeric)가 아닌 문자와 매치, [^a-zA-Z0-9_]와 동일한 표현식.
 
 2. Dot .  
-**a.b : "a + \n을 제외한 모든문자 + b" a와 b 사이 어떤 문자가 들어가도 매치함**  
-**a[.]b : "a + . + b" a와 b사이 .이 들어가야 매치함**
+**a.b : "a + \n을 제외한 모든문자 + b"** a와 b 사이 어떤 문자가 들어가도 매치함    
+**a[.]b : "a + . + b"** a와 b사이 .이 들어가야 매치함
 
 3. 반복 *  
 **메타문자 '*'의 바로 앞에 있는 문자가 0부터 무한대인 문자열과 매치**  
@@ -31,24 +31,25 @@ ber bear beaar beaaar 모두 정규식 bea*r와 매치됨
 ber은 매치가 안되며, bear beaar beaaar 모두 bea+r와 매치됨
 
 5. 반복 {m,n}  
-**바로 앞에 있는 문자가 반복 횟수 m이상 n이하까지 매치되게 지정**
-{5,} : 반복 횟수 5이상  
-{,5} : 반복 횟수 5이하  
+**바로 앞에 있는 문자가 반복 횟수 m이상 n이하까지 매치되게 지정**  
+{5,} : 반복 횟수 5이상    
+{,5} : 반복 횟수 5이하    
+{1,} = '+'    
+{0,} = '*'    
 
-{1,} = '+'  
-{0,} = '*'  
-
-6. ?
-**{0,1}을 의미**
+6. ?  
+**{0,1}을 의미**   
 즉, 바로 앞에 오는 문자가 있어도 되고 없어도 됨  
 
+---
 
-#### 정규 표현식을 이용한 검색
+### 정규 표현식을 이용한 검색
 compile된 객체로 작업 수행
 ```python
 import re
 p = re.compole('[a-z]')
 ```
+---
 - compile 옵션 (약어)  
     - DOTALL(S) : DOT.이 줄바꿈 문자(\n)를 포함해 모든 문자와 매치되게 함
     - IGNORECASE(I) : 대소문자에 관계없이 매치되게 함
@@ -73,7 +74,7 @@ python three"""
 print(p.findall(data))
 # out : ['python one', 'python two', 'python three']
 ```
-
+---
 
 1. match()  
 문자열의 처음부터 정규식과 매치되는지 조사  
@@ -135,9 +136,9 @@ iterator = p.finditer('bad meets evil')
 print(f)
 # out : <callable_iterator object at 0x01F5E390>
 ```
-반환된 iterator를 for문을 사용하여 모두 추출가능    
-각각의 match객체를 요소로 포함하고 있음 
 ```python
+#반환된 iterator를 for문을 사용하여 모두 추출가능    
+#각각의 match객체를 요소로 포함하고 있음 
 for match in iterator:
     print(match)
 ```
