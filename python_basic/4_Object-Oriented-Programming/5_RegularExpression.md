@@ -52,13 +52,26 @@ p = re.compole('[a-z]')
 - compile 옵션 (약어)  
     - DOTALL(S) : DOT.이 줄바꿈 문자(\n)를 포함해 모든 문자와 매치되게 함
     - IGNORECASE(I) : 대소문자에 관계없이 매치되게 함
-    - MULTILINE(M) : 여러줄과 매치되게 함
-    - VERBOSE(X) : 정규식을 보기 편하게 만들고 주석 가능하게 함(verbose모드)  
+    - MULTILINE(M) : ^, $를 문자열의 각 줄마다 적용해 매치되게 함
+    - VERBOSE(X) : 정규식을 보기 편하게 만들고 주석 가능하게 함. 문자열에 사용된 공백은 컴파일할 때 제거됨(verbose모드)  
 ```python
 p = re.compile('a.b', re.DOTALL)  # = re.S
 m = p.match('a\nb')
 print(m)
 # out : <_sre.SRE_Match object at 0x01FCF3D8>
+```
+```python
+import re
+p = re.compile("^python\s\w+", re.MULTILINE)
+
+data = """python one
+life is too short
+python two
+you need python
+python three"""
+
+print(p.findall(data))
+# out : ['python one', 'python two', 'python three']
 ```
 
 
