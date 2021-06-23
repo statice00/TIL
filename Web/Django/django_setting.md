@@ -149,6 +149,8 @@
 
 ---
 
+---
+
 
 
 13. HTML페이지를 응답
@@ -249,15 +251,15 @@
         ```
 
             맨뒤에 숫자 2개 의미
-
+            
             1 : not Null (허용안함)     1 : private key 사용
-
+            
             0 : Null   (허용)           0 : private key 사용안함
 
       table의 데이터 검색
 
       ```bash 
-      SELECT * FROM my_to_do_app_todo;
+      select * from my_to_do_app_todo;
       ```
 
       sqlite 종료
@@ -267,3 +269,4 @@
       ```
 
       
+
