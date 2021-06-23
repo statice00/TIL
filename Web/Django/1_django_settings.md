@@ -172,7 +172,7 @@
 
    
     <br/>
-    
+
     - my_to_do_app 폴더에 **views.py** 수정
 
       html파일을 클라이언트에 응답을 해줄때 render 함수 사용
@@ -192,7 +192,7 @@
 <br/>
 <br/>   
 
-14. DB Model  
+- DB Model  
     django에서는 table을 model로 표현하고 각각의 모델을 클래스로 정의
 
     my_to_do_app 폴더에 **models.py** 수정
