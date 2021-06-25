@@ -1,4 +1,8 @@
-## project
+## project example
+
+<br/>
+
+### setting
 
 <br/>
 
@@ -604,12 +608,12 @@
   ```python
   path('send/', views.sendEmail)
   ```
-
   
-
-- ```python
+  restproject - settings.py에서 host_user, password 내 구글계정으로 입력   
+   
+  구글 계정 관리 - 보안 - 보안 수준이 낮은 앱의 엑세스 : (사용)으로 변경  
   
-  ```
+  이후에 내 구글계정으로 메일보내기
 
 
   
