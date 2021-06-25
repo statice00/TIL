@@ -50,6 +50,8 @@
 
 ---
 
+<br/>
+
 5. django 설치
 
    ```bash
@@ -248,7 +250,7 @@
         1|content|varchar(255)|1||0
         ```
 
-            맨뒤에 숫자 2개 의미
+            맨뒤에 숫자 2개 의미 
             
             1 : not Null (허용안함)     1 : private key 사용
             
@@ -266,6 +268,7 @@
       ```bash
       .quit
       ```
+
 
       
 
