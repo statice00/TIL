@@ -23,3 +23,13 @@
     대상 맨뒤 Homepath 삭제, 시작위치 공백
     
 
+
+
+## 주피터노트북 작업환경 경로 변경
+```python
+import os
+print("before: %s"%os.getcwd())
+os.chdir("C:/Users/123gu/Desktop/data-visualization-8/codes")
+print("after: %s"%os.getcwd())
+```
+
