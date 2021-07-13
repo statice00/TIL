@@ -17,3 +17,9 @@
 - SyntaxError: (unicode error) 'unicodeescape' 해결  
   1. r'주소'
   2. \를 2번 입력
+
+
+3. jupyter notebbok (가상환경이름) 우클릭 - 파일위치 이동 - 해당파일 우클릭 - 속성
+    대상 맨뒤 Homepath 삭제, 시작위치 공백
+    
+
