@@ -114,6 +114,7 @@ pandas datatype : series, DataFrame
   ---
 <br/>
   
+### dataframe 전처리, 핸들링
 
 - pandas dataframe 중복행 제거
 
@@ -145,7 +146,7 @@ pandas datatype : series, DataFrame
 - pandas dataframe 필요한 열 추출
 
   ```python
-  df_sample = df[['col1', 'col2']]
+  df_sample = df[['주소', 'col2']]
   ```
 
 - pandas join
@@ -262,6 +263,113 @@ pandas datatype : series, DataFrame
   ```
 
 
+- dataframe groupby 
+df.groupby()
+만약 c1을 제외한 모든 열들이 연속형 변수라면, c1을 기준으로 전체 연속형 변수에 대해 집계함
+  ```python
+  df.groupby().count() # 열에서 값이 발생하는 횟수 계산
+
+  df.groupby().sum()
+
+  df.groupby().mean()
+  ```
+  집계된 dataframe에서 집계된 기준도 열로 빼고 싶으면 .reset_index()를 사용한다.
+
+- dataframe 정렬
+  ```python
+  df.sort_values(by='c1', axis=0) # c1기준으로 오름차순 정렬
+
+  df.sort_values(by='c1', axis=1) # 내림차순 정렬
+
+  df.sort_values(by=['c1'], axis=0, na_position='first') # 결측값 처음에 위치
+
+  df.sort_values(by=['c1'], axis=0, na_position='last') # 결측값 마지막에 위치
+
+  ```
+
+<br/>
+
+---
+
+- 문자열 관련 전처리 
+
+  1. 인덱싱  .str[]
+  ```python
+  df['주소'].str[:5] # 앞 5자리까지만 추출
+
+  df['주소'].str[-1] # 마지막 한글자만 추출
+  ```
+  2. 분할  .str.split()
+  ```python
+  df['주소'].str.split(" ")  # 공백을 기준으로 분리해 각 행을 리스트로 
+
+  df['주소'].str.split(" ", expand+True)  # 분할된 개별 리스트를 바로 데이터프레임으로 만든다
+  ```
+  3. 시작글자 인식  .str.starswith()
+  ```python
+  # 서울로 시작하는 데이터만 필터링
+  df[df['주소'].str.startswith("서울")].head()
+  ```
+  4. 끝글자 인식  .str.endswith()
+  ```python
+  # 동으로 끝나는 데이터만 필터링
+  df[df['주소'].str.endswith("동")].head()
+  ```
+  5. 포함글자  .str.contains()
+  ```python
+  # 관악구가 들어간 데이터만 필터링
+  df[df['주소'].str.contains("관악구")].head()
+  ```
+  6. 문자 위치찾기 
+  ```python
+  # 왼쪽부터 검색후 위치반환 없으면 -1
+  df['주소'].str.find(' ').head()
+
+  # 찾은 모든 값 반환(정규식)
+  df['주소'].str.findall('\w+동').head()
+  ```
+  7. 문자 대체  .str.replace()
+  ```python
+  # 공백을 "_"로 대체
+  df['주소'].str.replace(" ", "_").head()
+  ```
+  8. 원하는 문자 추출  .str.extract()
+  ```python
+  df['주소'].str.extract('( \w*시 )|( \w*군 )|( \w*구 )')
+
+  df['주소'].str.extract('( \w*시 )|( \w*군 )|( \w*구 )').dropna(how='all')
+  ```
+  9. 문자열 패딩
+  문자열의 길이가 고정되어 부족할 경우 채워준다
+  ```python
+  # 문자열 길이 20자, 왼쪽부터 "_"로 채우기
+  df['주소'].str.pad(width=20, side='left', fillchar='_').head(10)
+
+  # 문자열 길이 20자, 오른쪽부터 "_"로 채우기
+  df['주소'].str.pad(width=20, side='right', fillchar='_').head(10)
+
+  # 문자열 길이 20자, 좌우로 "_"로 채우기
+  df['주소'].str.center(width=20, fillchar='_').head(10)
+
+  # 왼쪽부터 0으로 채우기
+  df['주소'].str.zfill(width=20).head(10)
+  ```
+  10. 공백제거 .str.strip()
+  ```python
+  df['주소'].str.strip()  # 앞 뒤 공백을 제거
+  df['주소'].str.lstrip()  # 앞 공백을 제거
+  df['주소'].str.rstrip()  # 뒤 공백을 제거
+  ```
+  11. 대소문자변경 
+  ```python
+  df['col1'].str.lower()      # 모두 소문자로 변경
+  df['col1'].str.upper()      # 모두 대문자로 변경
+  df['col1'].str.swapcase()   # 소문자는 대문자, 대문자는 소문자로 변경 
+  ```
+  
+
+<br/>
+
 - array transpose
 
   ```python
@@ -269,7 +377,7 @@ pandas datatype : series, DataFrame
   ```
   
   <br/>
-
+---
 #### category
 
 - category는 문자(object)보다 더 많은 기능을 할 수 있다.  
@@ -285,6 +393,7 @@ pandas datatype : series, DataFrame
 
 <br/>
 
+---
 #### 파일 읽고 쓰기
 
 ```python
