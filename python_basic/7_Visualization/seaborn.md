@@ -66,3 +66,5 @@ custom_palette = sns.color_palette("Dark2", 9)
 sns.palplot(custom_palette)
 ```
 
+추가 색상 참고
+https://colorbrewer2.org/#type=sequential&scheme=PuRd&n=3
