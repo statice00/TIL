@@ -113,7 +113,6 @@ pandas datatype : series, DataFrame
 
   ---
 <br/>
-  
 ### dataframe 전처리, 핸들링
 
 - pandas dataframe 중복행 제거
@@ -150,6 +149,12 @@ pandas datatype : series, DataFrame
   ```
 
 - pandas join
+
+  **중요** : 조인하는 기준 열끼리 datatype이 맞아야 하므로 df.info()로 타입 먼저 확인한 후에 
+
+  df['Date'] = df['Date'].astype('str')  이런 식으로 통일해준다음 진행해야 오류가 안난다.
+
+  https://yganalyst.github.io/data_handling/Pd_12/
 
   ``` python
   df_INNER_JOIN = pd.merge(dataframe_A, dataframe_B, left_on='key', right_on='key', how='inner')
@@ -278,13 +283,13 @@ df.groupby()
 - dataframe 정렬
   ```python
   df.sort_values(by='c1', axis=0) # c1기준으로 오름차순 정렬
-
+  
   df.sort_values(by='c1', axis=1) # 내림차순 정렬
-
+  
   df.sort_values(by=['c1'], axis=0, na_position='first') # 결측값 처음에 위치
-
+  
   df.sort_values(by=['c1'], axis=0, na_position='last') # 결측값 마지막에 위치
-
+  
   ```
 
 <br/>
@@ -296,13 +301,13 @@ df.groupby()
   1. 인덱싱  .str[]
   ```python
   df['주소'].str[:5] # 앞 5자리까지만 추출
-
+  
   df['주소'].str[-1] # 마지막 한글자만 추출
   ```
   2. 분할  .str.split()
   ```python
   df['주소'].str.split(" ")  # 공백을 기준으로 분리해 각 행을 리스트로 
-
+  
   df['주소'].str.split(" ", expand+True)  # 분할된 개별 리스트를 바로 데이터프레임으로 만든다
   ```
   3. 시작글자 인식  .str.starswith()
@@ -324,7 +329,7 @@ df.groupby()
   ```python
   # 왼쪽부터 검색후 위치반환 없으면 -1
   df['주소'].str.find(' ').head()
-
+  
   # 찾은 모든 값 반환(정규식)
   df['주소'].str.findall('\w+동').head()
   ```
@@ -336,7 +341,7 @@ df.groupby()
   8. 원하는 문자 추출  .str.extract()
   ```python
   df['주소'].str.extract('( \w*시 )|( \w*군 )|( \w*구 )')
-
+  
   df['주소'].str.extract('( \w*시 )|( \w*군 )|( \w*구 )').dropna(how='all')
   ```
   9. 문자열 패딩
@@ -344,13 +349,13 @@ df.groupby()
   ```python
   # 문자열 길이 20자, 왼쪽부터 "_"로 채우기
   df['주소'].str.pad(width=20, side='left', fillchar='_').head(10)
-
+  
   # 문자열 길이 20자, 오른쪽부터 "_"로 채우기
   df['주소'].str.pad(width=20, side='right', fillchar='_').head(10)
-
+  
   # 문자열 길이 20자, 좌우로 "_"로 채우기
   df['주소'].str.center(width=20, fillchar='_').head(10)
-
+  
   # 왼쪽부터 0으로 채우기
   df['주소'].str.zfill(width=20).head(10)
   ```
@@ -366,7 +371,6 @@ df.groupby()
   df['col1'].str.upper()      # 모두 대문자로 변경
   df['col1'].str.swapcase()   # 소문자는 대문자, 대문자는 소문자로 변경 
   ```
-  
 
 <br/>
 
@@ -428,6 +432,15 @@ with open('pdsample/gosu3.txt', 'wb') as c:
 ```python
 with open('pdsample/gosu3.txt') as c:
     print(c.read())
+```
+
+엑셀파일 읽고 쓰기
+
+```python
+mcp = pd.read_csv('C:/study/datasets/2019시가총액/marcap-2019.csv', engine='python')
+
+# encoding='cp949' : 한글깨짐 해결
+mcp.to_csv('../stock.csv', encoding='cp949')
 ```
 
 
