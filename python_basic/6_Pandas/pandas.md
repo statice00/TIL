@@ -108,11 +108,12 @@ pandas datatype : series, DataFrame
   # 즉, index로 가져오는게 아니어서 숫자 그대로 가져옴
   data.loc[0:5, 'column1':'column3']  # 0~5번째 행, column1~column3 열
   ```
-<br/>
+  
+  <br/>
   ---
-
+  
   ---
-<br/>
+  <br/>
 ### dataframe 전처리, 핸들링
 
 - pandas dataframe 중복행 제거
@@ -155,6 +156,8 @@ pandas datatype : series, DataFrame
   df['Date'] = df['Date'].astype('str')  이런 식으로 통일해준다음 진행해야 오류가 안난다.
 
   https://yganalyst.github.io/data_handling/Pd_12/
+
+  https://runebook.dev/ko/docs/pandas/user_guide/merging
 
   ``` python
   df_INNER_JOIN = pd.merge(dataframe_A, dataframe_B, left_on='key', right_on='key', how='inner')
@@ -289,8 +292,51 @@ df.groupby()
   df.sort_values(by=['c1'], axis=0, na_position='first') # 결측값 처음에 위치
   
   df.sort_values(by=['c1'], axis=0, na_position='last') # 결측값 마지막에 위치
-  
   ```
+  
+- dataframe 내의 값 변경, update하기
+
+  - at()
+
+    row index와 열 이름에 해당하는 값을 직접 지정해 변경
+  
+    ```python
+    dataframe.at[index,'column-name']='new value'
+    
+    dataset.at[dataset['label'][dataset['Code']==codes[i]].index,'label']=new_label_data
+    ```
+  
+  - loc()
+  
+    여러 열에서 변경 가능
+  
+    ```python
+    dataframe.loc[row index,['column-names']] = value
+    
+    data.loc[0:2,['Num','NAME']] = [100,'Python']
+    ```
+  
+  - replace()
+  
+    dataframe내에 있는 모든 특정 값을 바꿔준다
+  
+    ```python
+    dataframe.replace("old string", "new string", inplace=True)
+    ```
+  
+  - iloc()
+  
+    row, column 인덱스를 지정해 값 변경 가능
+  
+    ```python
+    dataframe.iloc[index] = value
+    
+    data.iloc[[0,1,3,6],[0]] = 100
+    ```
+  
+    
+  
+  
 
 <br/>
 
@@ -371,6 +417,19 @@ df.groupby()
   df['col1'].str.upper()      # 모두 대문자로 변경
   df['col1'].str.swapcase()   # 소문자는 대문자, 대문자는 소문자로 변경 
   ```
+  
+  12. 지정한 자리수 만큼 0으로 채우기
+
+  ```python
+  codes = df['Code'].unique()
+  code = codes.astype(str)
+  
+  code[0].zfill(6)  # 6자리가 찰때까지 0으로 채워줌
+  
+  # code[0] = 5930 -> 005930
+  ```
+
+
 
 <br/>
 
