@@ -10,7 +10,7 @@
 
 2. 경로 설정
     1. user/.jupyter 폴더에 "jupyter_notebook_config.py" 파일을 메모장으로 열기
-    2. notebook_dir 검색해서 주석 해제하고 따옴표안에 원하는 경로 입력
+    2. notebook_dir 검색해서 주석 해제하고 따옴표안에 원하는 경로 입력(\를 /로 바꿔줘야 제대로 인식)
 
 <br/>
 
