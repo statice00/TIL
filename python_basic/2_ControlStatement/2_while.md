@@ -1,42 +1,51 @@
 ### while 반복문
 ![while](https://media.geeksforgeeks.org/wp-content/uploads/20191101170515/while-loop.jpg) 
-a += 1 : a = a + 1  
-a -+ 1 : a = a - 1  
-while문이 완벽히 돌았으므로 end 출력
-```python
-a = 10
-while a>10:
-    a -= 1
-    print(a)
-else:
-    print('end')
-# out : end
-```
-break는 반복문을 중단시킴  
-break가 실행되면 반복문이 완벽하게 실행된 것이 아니므로 else가 실행되지 않음
-```python
-a = 10
-while a>1:
-    a -= 1
-    if a==5:
-        break
-    print(a)
-else:
-    print('end')
 
-# out : 9 8 7 6
-```
-continue는 다음 루프로 바로 넘어감  
-반복문을 중단하지 않음
-```python
-a = 10
-while a>1:
-    a -= 1
-    if a==5:
-        continue
-    print(a)
-else:
-    print('end')
+while문은 반복 범위 없이 조건에 따라 반복  수행 여부를 결정
 
-# out : 9 8 7 6 5 4 3 2 1 end
-```
+
+
+- while문 구조
+
+  ```python
+  while <조건문>:
+      <코드 블록>
+  ```
+
+  while문 활용
+
+  i += 1 의 뜻은  i = i + 1 
+  i -= 1 의 뜻은  i = i - 1  
+
+  ```python
+  # 자연수 1부터 순차적으로 더해서 출력하다가 합이 20보다 커지면 멈추는 반복문
+  
+  i = 0 # 초기화
+  sum = 0 # 초기화
+  
+  while (sum < 20): # 조건 검사
+      i += 1 # i를 1씩 증가
+      sum = sum + i # 이전의 sum과 현재 i를 더해서 sum 갱신
+      print(i,sum) # i와 sum을 출력
+  
+  # out :
+  #    1 1
+  #    2 3
+  #    3 6
+  #    4 10
+  #    5 15
+  #    6 21
+  ```
+
+- 무한 반복 while문
+
+  코드 블록을 무조건 계속 반복하라고 명령을 내리는 경우
+
+  while문에서 <조건문>이 항상 참이므로 코드 블록을 무조건 수행한다.
+
+  이 경우 코드가 무한 반복하므로 주의가 필요하다.
+
+  ```python
+  while True:
+      print("infinite while Test")
+  ```
