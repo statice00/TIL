@@ -62,44 +62,6 @@ type(a) # out : str
     a[::-2] # 거꾸로 2씩 간격
     ```
   
-- 포맷팅  
-  %d : 10진수 정수  
-  %f : 실수  
-  %s : 문자열  
-  %c : 단일 문자 
-  %h : 16진수 정수 
-  %o : 8진수 정수  
-  %% : 문자 %   
-  format() 메소드
-
-    ```python
-    total = 100
-    print('총 인원은 %d명 입니다.' % total)
-    print('%d명 %d명 %d명' % (20,30,40))
-    ```
-  format() 메소드
-    ```python
-    print('총 인원은 {}명 입니다.' .format(total))
-    print('{}명 {}명 {}명' .format(20,30,40))
-    ```
-  
-- 제어문자  
-  제어문자는 \로 시작하는 escape sequence  
-  \n : 다음 줄로 이동  
-  \t : tab
-
-    ```python
-    print(1,2,3, sep = '\n')
-    print('1\t2\t3')
-    ```
-  
-- 정수,소수 자리수 지정
-
-    ``` python
-    pi = 3.14159256
-    print('%10.2f' % pi) # 정수자리 10개, 소수자리 2개
-    ```
-
 - 문자열 반복
 
     ``` python
