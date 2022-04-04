@@ -97,21 +97,21 @@
         ```
        
     7. 가변 keyword  
-      매개변수(parameter) 이름에 '**'을 붙인다.  
-      keyword방식으로 입력되는 인수의 개수에 상관없이 모두 받아온다.  
-      인수로 넘겨준 이름을 dictionary의 key로 사용한다.
+        매개변수(parameter) 이름에 '**'을 붙인다.  
+        keyword방식으로 입력되는 인수의 개수에 상관없이 모두 받아온다.  
+        인수로 넘겨준 이름을 dictionary의 key로 사용한다.
     
-       ```python
-      def proc (**a):
-          print(type(a))
-          return a
-      
-      proc(x=2,y=3)
-      # out : <class 'dict'>
-      #       {'x' : 2, 'y' : 3}
-       ```
-      가변 positional, 가변 keyword 방식은 매개변수를 지정할때 한번씩만 사용할 수 있다.
-    
+        ```python
+        def proc (**a):
+        print(type(a))
+        return a
+        
+        proc(x=2,y=3)
+        # out : <class 'dict'>
+        #       {'x' : 2, 'y' : 3}
+        ```
+        가변 positional, 가변 keyword 방식은 매개변수를 지정할때 한번씩만 사용할 수 있다.
+
 
 ---
 
