@@ -36,7 +36,7 @@
 
 ![heap](https://blog.kakaocdn.net/dn/biUlKc/btquYYrEFom/xT5CqFhMPYIFsk1JNz6WLk/img.png)
 
-- 힙은 [완전 이진 트리 자료구조](#완전-이진-트리(complete-binary-tree))의 일종이다.
+- 힙은 [완전 이진 트리 자료구조](#완전-이진-트리complete-binary-tree)의 일종이다.
 - 힙에서는 항상 루트 노트(root node)를 제거한다. 데이터를 넣을 때는 트리에 데이터를 넣도록 하고, 꺼낼때는 루트 노드의 데이터를 꺼낸다.
 - 최소 힙(min heap)
   - 루트 노드가 가장 작은 값을 가진다.
