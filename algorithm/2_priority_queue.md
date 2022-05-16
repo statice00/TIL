@@ -26,7 +26,7 @@
 
     - 단순히 N개의 데이터를 힙에 넣었다가 모두 꺼내는 작업은 그 자체로도 정렬이 수행되므로 정렬과 동일하다. (**힙 정렬**)
 
-      이 때 이 N개의 데이터를 모두 힙에 넣고 빼기 위해서 **O(NlogN)**의 시간복잡도가 소요된다.
+      이 때 이 N개의 데이터를 모두 힙에 넣고 빼기 위해서 **O(NlogN)** 의 시간복잡도가 소요된다.
 
 </br>
 
@@ -36,7 +36,7 @@
 
 ![heap](https://blog.kakaocdn.net/dn/biUlKc/btquYYrEFom/xT5CqFhMPYIFsk1JNz6WLk/img.png)
 
-- 힙은 **[완전 이진 트리 자료구조](#완전-이진-트리(complete-binary-tree))**의 일종이다.
+- 힙은 [완전 이진 트리 자료구조](#완전-이진-트리(complete-binary-tree))의 일종이다.
 - 힙에서는 항상 루트 노트(root node)를 제거한다. 데이터를 넣을 때는 트리에 데이터를 넣도록 하고, 꺼낼때는 루트 노드의 데이터를 꺼낸다.
 - 최소 힙(min heap)
   - 루트 노드가 가장 작은 값을 가진다.
@@ -60,7 +60,7 @@
 ![enqueue](https://slid-capture.s3.ap-northeast-2.amazonaws.com/public/image_upload/3f75849a890a4de08c0f0226cb38f9ff/309b55e3-a4bf-4a44-a8ab-75b389ddd816.png)
 
 - 2를 삽입했을 때 오른쪽 그림과 같이 힙이 갱신
-- 이러한 Heapify()를 이용하게 되면 힙에 새로운 원소가 삽입될 때 **O(logN)**의 시간 복잡도로 힙 성질을 유지하도록 할 수 있다.
+- 이러한 Heapify()를 이용하게 되면 힙에 새로운 원소가 삽입될 때 **O(logN)** 의 시간 복잡도로 힙 성질을 유지하도록 할 수 있다.
 - 이때 힙 자료구조는 완전 이진 트리를 따르기 때문에 균형잡힌 트리로써 동작하는 것이 특징
 - 항상 부모쪽으로 거슬러 올라가거나 다시 부모에서 자식으로 내려올 때 최악의 경우에도 O(logN)의 시간복잡도를 보장할 수 있다. 
 
@@ -116,11 +116,8 @@ for i in range(n):
 
 
 
+#### 완전 이진 트리(Complete Binary Tree)
 
+![CBT](https://slid-capture.s3.ap-northeast-2.amazonaws.com/public/image_upload/3f75849a890a4de08c0f0226cb38f9ff/7f015080-39ba-429b-8698-8d7974537633.png)
 
-- #완전 이진 트리(Complete Binary Tree)
-
-  ![CBT](https://slid-capture.s3.ap-northeast-2.amazonaws.com/public/image_upload/3f75849a890a4de08c0f0226cb38f9ff/7f015080-39ba-429b-8698-8d7974537633.png)
-  
-  루트(root) 노드부터 시작하여 왼쪽 자식 노드, 오른쪽 자식 노드 순서대로 데이터가 차례대로 삽입되는 트리(tree)를 의미한다.
-
+루트(root) 노드부터 시작하여 왼쪽 자식 노드, 오른쪽 자식 노드 순서대로 데이터가 차례대로 삽입되는 트리(tree)를 의미한다.
