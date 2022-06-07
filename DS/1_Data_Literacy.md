@@ -258,6 +258,6 @@
 
   이 앞의 부분이 체계적으로 설계가 되어 있다면 이후 진행하는 <수집 -> 전처리 -> 분석 -> 시각화>는 막힘없이 진행 가능
 
-  ![image-20220604215000764](https://ifh.cc/g/2CWTHK.jpg)
-
-![image-20220604215054715](https://ifh.cc/g/r906vd.jpg)
+  ![image-20220604215000764](https://ifh.cc/g/PgKBcZ.jpg)
+  
+  ![image-20220604215054715](https://ifh.cc/g/TF6XFL.jpg)
